@@ -1,6 +1,9 @@
-# LordOfTheRing
+# Lord Of The Ring Character List App With - Loopback4 APIs
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
+
+## Before Running
+Clone the app in this repo but before running the app you should clone Back End App too in this link ( https://github.com/cetinaziz2894/lb4-app.git ). After installation steps of Back End App repo you can run the app. 
 
 ## Development server
 
