@@ -1,0 +1,9 @@
+
+<div *ngIf="itemList" class="list">
+    <div *ngFor="let item of itemList;">
+        <app-card [item]='item'></app-card>
+    </div>
+</div>
+<div *ngIf="itemList.length === 0" class="info">
+    <div class="text">No data found!</div>
+</div>

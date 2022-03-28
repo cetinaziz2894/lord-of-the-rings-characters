@@ -1,0 +1,49 @@
+<div class="wrapper">
+  <div class="form">
+    <div class="title">
+      <img src="./../../../assets/img/logo.png" />
+      Login
+    </div>
+    <form *ngIf="!isLoggedIn"
+    name="form"
+    (ngSubmit)="f.form.valid && onSubmit()"
+    #f="ngForm"
+    novalidate>
+      <div class="input_wrap">
+        <label for="input_text">Email</label>
+        <div class="input_field">
+          <input type="text" class="input" type="text"
+          class="form-control"
+          name="email"
+          [(ngModel)]="form.email"
+          required
+          #username="ngModel">
+        </div>
+      </div>
+      <div class="input_wrap">
+        <label for="input_password">Password</label>
+        <div class="input_field">
+          <input type="password" class="input" type="password"
+          class="form-control"
+          name="password"
+          [(ngModel)]="form.password"
+          required
+          minlength="6"
+          #password="ngModel">
+        </div>
+      </div>
+      <div class="input_wrap">
+        <span class="error_msg" *ngIf="isLoginFailed">Login failed: {{ errorMessage }}</span>
+      </div>
+      <div class="input_wrap">
+        <input type="submit" class="btn" value="Login">
+      </div>
+      <div class="input_wrap">
+        <span class="sign-up">
+          <span class="image"><img src="./../../../assets/img/add-user.png" /></span>  
+          <a [routerLink]="['/register']">Create Account</a>
+        </span>
+      </div>
+    </form>
+  </div>
+</div>

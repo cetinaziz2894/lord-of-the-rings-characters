@@ -1,0 +1,27 @@
+<div class="card-wrapper" *ngIf="item">
+    <div class="card-image" (click)="goToPage(item.wikiUrl)">
+    <img src="./../../../assets/img/{{image}}.png" alt="{{image}}" />
+    </div>
+    <div class="card-details">
+    <div class="card-text">
+        <a href="{{item.wikiUrl}}" target="_blank">
+        <h1> {{ item.name }}</h1>
+        </a>
+        <p>{{ item.spouse}}</p>
+        <p>{{ item.hair}}</p>
+        <p>{{ item.height}}</p>
+    </div>
+    <div class="card-stats">
+        <div class="amount">
+        <span>{{item.race}}</span>
+        </div>
+        <div class="time">
+        <span>{{item.realm}}</span>
+        </div>
+    </div>
+    </div>
+    <div class="card-author">
+    <p>Birth: <a href="#">{{item.birth}}</a></p>
+    <p>Death: <a href="#">{{item.death}}</a></p>
+    </div>
+</div>

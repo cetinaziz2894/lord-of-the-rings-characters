@@ -1,0 +1,148 @@
+:host {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-blue);
+}
+
+.filters {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.filter-container {
+  display: flex;
+  width: 45%;
+  margin-bottom: 10px;
+}
+
+.select {
+  position: relative;
+  width: 100%;
+  margin-right: 1rem;
+}
+
+.select[open] {
+  z-index: 99999;
+}
+
+summary {
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: var(--card-color);
+  list-style: none;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+details[open] summary:before {
+  content: '';
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+summary:after {
+  content: '';
+  display: inline-block;
+  float: right;
+  width: .5rem;
+  height: .5rem;
+  border-bottom: 1px solid currentColor;
+  border-left: 1px solid currentColor;
+  border-bottom-left-radius: 2px;
+  transform: rotate(45deg) translate(50%, 0%);
+  transform-origin: center center;
+  transition: transform ease-in-out 100ms;
+  margin-top: -5px;
+}
+
+summary:focus {
+  outline: none;
+}
+
+details[open] summary:after {
+  transform: rotate(-45deg) translate(0%, 0%);
+}
+
+ul {
+  width: 100%;
+  background: var(--card-color);
+  position: absolute;
+  top: calc(100% + .5rem);
+  left: 0;
+  padding: 1rem;
+  margin: 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid var(--clr-blue);
+  max-height: 200px;
+  overflow-y: auto;
+  list-style-type: none;
+}
+
+li {
+  margin: 0;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--clr-blue);
+  cursor: pointer;
+}
+
+li:first-child {
+  padding-top: 0;
+}
+
+li:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+/* FAKE SELECT */
+
+summary.radios {
+  counter-reset: radios;
+}
+
+ul.list {
+  counter-reset: labels;
+}
+
+label {
+  width: 100%;
+  display: block;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 700px) {
+  :host {
+    height: auto;
+  }
+
+  .filters{
+    flex-direction: column;
+  }
+
+  .filter-container{
+    width: 100%;
+  }
+}

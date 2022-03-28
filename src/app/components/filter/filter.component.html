@@ -1,0 +1,35 @@
+<div class="filters">
+    <div class="filter-container" *ngIf="names?.length != 0">
+        <details class="select">
+            <summary>{{filter.name ? filter.name : 'Filter By Names'}}</summary>
+            <ul>
+                <li *ngFor="let option of names;" (click)="filterName(option)">{{option}}</li>
+            </ul>
+        </details>
+     </div>
+     <div class="filter-container" *ngIf="hairs?.length != 0">
+        <details class="select">
+            <summary>{{filter.hair ? filter.hair : 'Filter By Hairs'}}</summary>
+            <ul>
+                <li *ngFor="let option of hairs;" (click)="filterHair(option)">{{option}}</li>
+            </ul>
+        </details>
+     </div>
+     <div class="filter-container" *ngIf="genders?.length != 0">
+        <details class="select">
+            <summary>{{filter.gender ? filter.gender : 'Filter By Gender'}}</summary>
+            <ul>
+                <li *ngFor="let option of genders;" (click)="filterGender(option)">{{option}}</li>
+            </ul>
+        </details>
+     </div>
+     <div class="filter-container" *ngIf="races?.length != 0">
+        <details class="select">
+            <summary>{{filter.race ? filter.race : 'Filter By Races'}}</summary>
+            <ul>
+                <li *ngFor="let option of races;" (click)="filterRace(option)">{{option}}</li>
+            </ul>
+        </details>
+     </div>
+</div>
+
