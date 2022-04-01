@@ -21,13 +21,13 @@ export class RegisterComponent implements OnInit {
   onSubmit(): void {
     const { username, email, password } = this.form;
     this.authService.register(username, email, password).subscribe(
-      data => {
+      () => {
         this.isSuccessful = true;
         this.isSignUpFailed = false;
         this.router.navigate(['/login']);
       },
-      err => {
-        this.errorMessage = err.error.error.message;
+      (      err: { error: { error: { message: string; }; }; message: string; }) => {
+        this.errorMessage = err.error?.error?.message ? err.error.error.message :  err?.message;;
         this.isSignUpFailed = true;
       }
     );

@@ -32,8 +32,9 @@
           #password="ngModel">
         </div>
       </div>
-      <div class="input_wrap">
-        <span class="error_msg" *ngIf="isLoginFailed">Login failed: {{ errorMessage }}</span>
+      <div class="input_wrap"  *ngIf="isLoginFailed">
+        <span class="error_msg">Login failed: {{ errorMessage }}</span>
+        <img src="./../../../assets/img/tenor.gif" />
       </div>
       <div class="input_wrap">
         <input type="submit" class="btn" value="Login">

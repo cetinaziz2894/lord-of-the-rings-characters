@@ -22,6 +22,8 @@
 
 .logo img{
     width: 120px;
+    background-color: white;
+    border-radius: 10px;
 }
 
 .page-title{
@@ -39,7 +41,8 @@
 .btn{
     padding: 10px;
 	width: auto;
-	border: 1px solid #5c4b51;
+	border: 1px solid transparent;
+    border-radius: 5px;
 	font-size: 12px;
 	border-radius: 3px;
 	text-transform: uppercase;

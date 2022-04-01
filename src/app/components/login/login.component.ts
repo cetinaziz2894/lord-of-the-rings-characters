@@ -28,14 +28,14 @@ export class LoginComponent implements OnInit {
   onSubmit(): void {
     const { email, password } = this.form;
     this.authService.login(email, password).subscribe(
-      data => {
+      (      data: { token: string; }) => {
         this.tokenStorage.saveToken(data.token);
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.goToPage('/home');
       },
-      err => {
-        this.errorMessage = err.error.error.message;
+      (      err: { error: { error: { message: string; }; }; message: string; }) => {
+        this.errorMessage = err.error?.error?.message ? err.error.error.message :  err?.message;
         this.isLoginFailed = true;
       }
     );
